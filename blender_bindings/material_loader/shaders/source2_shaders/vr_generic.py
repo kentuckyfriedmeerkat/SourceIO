@@ -67,7 +67,7 @@ class VRGeneric(Source2ShaderBase):
         shader = self.create_node(Nodes.ShaderNodeBsdfPrincipled, self.SHADER)
         self.connect_nodes(shader.outputs['BSDF'], material_output.inputs['Surface'])
         shader.inputs['Roughness'].default_value = self.roughness
-        shader.inputs['Specular'].default_value = self.specular
+        shader.inputs['Specular IOR Level'].default_value = self.specular
         color_texture = self.color_texture
         normal_texture = self.normal_texture
 

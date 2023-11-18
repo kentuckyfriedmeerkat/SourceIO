@@ -363,9 +363,9 @@ class HeroesArmor(Source1ShaderBase):
                 self.connect_nodes(basetexture_node.outputs['Color'], shader.inputs['Emission'])
 
             if not self.phong:
-                shader.inputs['Specular'].default_value = 0
+                shader.inputs['Specular IOR Level'].default_value = 0
             elif self.phongboost is not None:
-                shader.inputs['Specular'].default_value = self.clamp_value(self.phongboost / 64)
+                shader.inputs['Specular IOR Level'].default_value = self.clamp_value(self.phongboost / 64)
             phongexponenttexture = self.phongexponenttexture
             if self.phongexponent is not None and phongexponenttexture is None:
                 shader.inputs['Roughness'].default_value = self.clamp_value(self.phongexponent / 256)

@@ -76,7 +76,7 @@ class WorldVertexTransition(Source1ShaderBase):
 
         if basetexture and basetexture2:
             vertex_color = self.create_node(Nodes.ShaderNodeVertexColor)
-            
+
             color_mix = self.create_node(Nodes.ShaderNodeMixRGB)
             self.connect_nodes(vertex_color.outputs['Color'], color_mix.inputs['Fac'])
             color_mix.blend_type = 'MIX'
@@ -91,4 +91,4 @@ class WorldVertexTransition(Source1ShaderBase):
             self.connect_nodes(color_mix.outputs['Color'], shader.inputs['Base Color'])
 
         if not self.phong:
-            shader.inputs['Specular'].default_value = 0
+            shader.inputs['Specular IOR Level'].default_value = 0

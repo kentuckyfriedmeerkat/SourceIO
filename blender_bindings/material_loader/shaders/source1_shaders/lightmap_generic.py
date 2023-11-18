@@ -88,7 +88,7 @@ class LightmapGeneric(Source1ShaderBase):
             self.connect_nodes(normalmap_node.outputs['Normal'], shader.inputs['Normal'])
 
         if not self.phong:
-            shader.inputs['Specular'].default_value = 0
+            shader.inputs['Specular IOR Level'].default_value = 0
 
 
 class ReflectiveLightmapGeneric(LightmapGeneric):
@@ -96,4 +96,3 @@ class ReflectiveLightmapGeneric(LightmapGeneric):
 
 class SDKLightmapGeneric(LightmapGeneric):
     SHADER = 'sdk_lightmappedgeneric'
-
